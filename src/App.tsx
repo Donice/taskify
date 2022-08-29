@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+let name: string = 'Donice'
+let age: number | string;
+let isSstudent: boolean;
+let hobbies: string[]; 
+let role:[number, string, boolean];//tuple
+
+age = 2
+
+type Person = { //declaring an object in typescript
+  name: string,
+  age?: number
+}
+
+let person: Person = {
+  name: 'DOnice',
+  // age: 2
+}
+
+let lotsOdPeple: Person[]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="text-5xl font-bold underline">
+      Hello world!
+    </h1>
     </div>
   );
 }
