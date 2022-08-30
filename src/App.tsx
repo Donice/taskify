@@ -1,32 +1,17 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from "react";
+import InputFeilds from "./components/InputFeilds";
 
-let name: string = 'Donice'
-let age: number | string;
-let isSstudent: boolean;
-let hobbies: string[]; 
-let role:[number, string, boolean];//tuple
 
-age = 2
+const App: React.FC = () => {
+  const [todo, setTodo] = useState<string>('');
 
-type Person = { //declaring an object in typescript
-  name: string,
-  age?: number
-}
-
-let person: Person = {
-  name: 'DOnice',
-  // age: 2
-}
-
-let lotsOdPeple: Person[]
-
-function App() {
   return (
-    <div className="App">
-      <h1 className="text-5xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="w-screen h-screen flex flex-col items-center bg-sky-600">
+      <span className="text-4xl text-center text-gray-50 mx-0 my-8 z-1 md:text-3xl my-4">Taskify</span>
+      <InputFeilds
+        todo={todo}
+        setTodo={setTodo}
+      />
     </div>
   );
 }
