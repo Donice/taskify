@@ -1,9 +1,28 @@
 import React, { useState } from "react";
 import InputFeilds from "./components/InputFeilds";
-
+import { Todo } from "./model";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>('');
+  const [todos, setTodos] = useState<Todo[]>([]); // creating an array of a type or an interface
+
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (todo) {
+      setTodos([
+        ...todos,
+        {
+          id: Date.now(),
+          todo: todo,
+          isDone: false
+        }
+      ]);
+      setTodo("");
+    }
+  }
+
+  console.log(todos)
 
   return (
     <div className="w-screen h-screen flex flex-col items-center bg-sky-600">
@@ -11,7 +30,11 @@ const App: React.FC = () => {
       <InputFeilds
         todo={todo}
         setTodo={setTodo}
+        handleAdd={handleAdd}
       />
+      {todos.map((t) => (
+        <li>{t.todo}</li>
+      ))}
     </div>
   );
 }
