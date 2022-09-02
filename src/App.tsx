@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InputFeilds from "./components/InputFeilds";
 import { Todo } from "./model";
+import TodoList from "./components/TodoList";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>('');
@@ -25,16 +26,19 @@ const App: React.FC = () => {
   console.log(todos)
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center bg-sky-600">
+    <div className="w-screen h-screen flex flex-col items-center bg-gradient-to-r from-gray-900 to-teal-900">
       <span className="text-4xl text-center text-gray-50 mx-0 my-8 z-1 md:text-3xl my-4">Taskify</span>
       <InputFeilds
         todo={todo}
         setTodo={setTodo}
         handleAdd={handleAdd}
       />
-      {todos.map((t) => (
-        <li>{t.todo}</li>
-      ))}
+
+      <TodoList
+        todos={todos}
+        setTodos={setTodos}
+      />
+
     </div>
   );
 }

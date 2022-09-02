@@ -31,7 +31,7 @@ const InputFeilds: React.FC<Props> = ({ todo, setTodo, handleAdd }) => { // anot
 
       <button
         type='submit'
-        className='absolute w-12 h-12 m-3 rounded-full right-0 border-none text-base bg-sky-600 text-gray-50 hover:bg-sky-400 hover:scale-75'
+        className='absolute w-12 h-12 m-3 rounded-full right-0 border-none text-base bg-gradient-to-r from-gray-900 to-teal-900 text-gray-50 hover:bg-sky-400 hover:scale-75'
       >
         Go
       </button>
