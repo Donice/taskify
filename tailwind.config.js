@@ -5,11 +5,15 @@ module.exports = {
     extend: {
       width: {
         32: "32%",
+        47: "47.5%",
+        40: "40%",
+        80: "80%",
         95: "95%",
       },
     },
     screens: {
-      md: { max: "800px" },
+      sm: { max: "800px" },
+      md: { max: "1200px" },
     },
   },
   plugins: [],
