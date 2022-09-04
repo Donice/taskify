@@ -49,7 +49,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
 
   return ( //todos__single is for form //
     <form
-      className='flex w-32 rounded-sm p-5 mt-3.5 bg-gradient-to-r from-yellow-600 to-orange-700 sm:w-full '
+      className='flex w-full rounded-xl p-5 mt-3.5 bg-gradient-to-r from-yellow-600 to-orange-700 sm:w-full '
       onSubmit={(e) => handleEdit(e, todo.id)}
     >
 
@@ -70,9 +70,6 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
           )
         )
       }
-
-
-
 
       <div className='flex space-x-3'>
         <span
