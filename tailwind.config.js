@@ -12,6 +12,9 @@ module.exports = {
         90: "90%",
         95: "95%",
       },
+      scale: {
+        103: "1.03",
+      },
     },
     screens: {
       sm: { max: "800px" },
