@@ -14,9 +14,9 @@ const TodoList: React.FC<Props> = ({ todos, setTodos, completedTodos, setComplet
   return (
     <div className="flex w-85 mt-2.5 justify-between items-start md:block "> {/* container */}
       <Droppable droppableId='TodosList'>
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className="flex w-47 flex-col m-3 p-3 rounded-xl bg-teal-400 md:w-95"
+            className={`flex w-47 flex-col m-3 p-3 rounded-xl bg-teal-400 md:w-95 ${snapshot.isDraggingOver ? "bg-teal-600" : " "}`}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
@@ -40,9 +40,9 @@ const TodoList: React.FC<Props> = ({ todos, setTodos, completedTodos, setComplet
       </Droppable>
 
       <Droppable droppableId='TodosRemove'>
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className="flex w-47 flex-col m-3 p-3 rounded-xl bg-red-700 md:w-95"
+            className={`flex w-47 flex-col m-3 p-3 rounded-xl bg-red-700 md:w-95  ${snapshot.isDraggingOver ? "bg-red-900" : " "}`}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
